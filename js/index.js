@@ -4,7 +4,7 @@ const conteinerBtnAcao = document.querySelector('[data-qrcode="acao-qrcode"]')
 const qrcodeDowload = document.querySelector('[data-qrcode="download-qrcode"]')
 
 const urlAPI = valueQR => 
-   `http://chart.apis.google.com/chart?cht=qr&chl=${valueQR}&chs=300`
+   `https://chart.apis.google.com/chart?cht=qr&chl=${valueQR}&chs=300`
 
 
 const geradoQrCode = async valueQr =>{
