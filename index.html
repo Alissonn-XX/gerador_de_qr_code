@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/qrcode.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Gerador de Qrcode</title>
+  </head>
+  <body>
+      <form>
+          <div class="configuracao-geral titulo-qrcode">
+             <h1>O que vai transformar em QrCode hoje?</h1>
+          </div>
+          
+            <div class="configuracao-geral" data-qrcode="conteiner">
+                <div class="ajuda-qrcode">
+                  <img src="/image/ponto-de-interrogacao.png" alt="icone-ajuda"></img><span>Exemplo</span>
+                </div>
+                
+                <div class="configuracao-geral qrcode-ativo" data-qrcode="conteiner-qrcode">
+                  <img src="/image/Sem Título-1.png" alt="qrcode" data-qrcode="qrcode-image"/>
+                </div>
+                
+                <div class="configuracao-geral" data-qrcode="entra-qrcode"> 
+                  <input type="text" name="entradaQr" placeholder="Digite algo para gera seu QrCode">
+                </div>
+            </div>
+
+          <div class="configuracao-geral botao-qrcode" data-qrcode="acao-qrcode">
+            <button type="submit" >gerar qrcode</button>
+            <button type="reset"  >novo qrcode</button>
+            <button type="button" ><a data-qrcode="download-qrcode" href="#" >imprimir qrcode</a></button>
+          </div>
+      </form>
+  </body>
+  <script src="./js/index.js"></script>
+</html>

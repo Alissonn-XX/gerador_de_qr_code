@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+
+:root{
+    --medidaLaguraSm: 21.87rem;
+    --medidaAlturaSm: 31.25rem;
+
+    --colorDark: #fdfdfd;
+    --colorLingth: #1c1c1c;
+
+    --corFundoDank: #1c1c1c;
+    --corFundoLingth: #fdfdfd;
+}
+
+/* form{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+    transform: translate(-50%,-50%);
+    max-width: var(--larguraConteiner);
+    min-height: var(--alturaConteiner);
+    border: 2px solid #b2b2b2;
+    border-radius: 5px;
+} 
+form h1{
+    width:20rem;
+    position: relative;
+    align-self: flex-start;
+    border: 2px solid rgb(98, 255, 0);
+}
+*/
+
+
+@media (min-width:360px) and (max-width:400px){
+    
+    body{
+        color: var(--colorDark);
+        background: var(--corFundoDank)
+    }
+
+    form{
+        position:absolute;
+        top:50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: var(--medidaLaguraSm);
+        height:var(--medidaAlturaSm);
+        transform: translate(-50%,-50%);
+        border: 2px solid #b2b2b2;
+        background: #606566;
+        border-radius: 5px;
+    }
+    .configuracao-geral{
+        width: 21.6em;
+        border-radius: 3px;
+    }
+
+    .titulo-qrcode{
+        height: 3.65em;
+    }
+    
+    .titulo-qrcode h1{
+        font-size: 24px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .ajuda-qrcode{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        height: 2.5em;
+        margin: 10px 0 15px 0;
+    }
+    .ajuda-qrcode img{
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin: 5px 0 5px 8px;
+        background: #c0c0c0;
+        border-radius: 50%;
+        outline: 2px solid;
+    }
+    .ajuda-qrcode span{
+      opacity: 0;
+      font-weight: 500;
+      text-shadow: 2px 2px #606566;
+    }
+    .ajuda-qrcode img:hover + span{
+       transition: all .5s;
+       opacity: 1;
+    }
+   
+    /*CONTEINER PARA ORGANIZAR ITENS*/
+    [data-qrcode="conteiner"]{
+        height: 22.5em;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+   /*QRCODE*/
+    [data-qrcode="conteiner-qrcode"]{
+        width:16.62em;
+        height: 14.37em;
+        margin: 0 42px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    [data-qrcode="qrcode-image"]{
+        display: block;
+        max-width: 100%;
+        transform: translateY(-18px) scale(1.2);
+    }
+
+    .qrcode-ativo{
+       border-radius: 15px;
+       outline: 2px solid #fdfdfd;
+       box-shadow: 0 0 2px 5px #404141;
+    }
+    
+  /*ENTRADA DO USUÁRIO PARA GERAR O QRCODE*/  
+    [data-qrcode="entra-qrcode"]{
+        min-width:16.62em;
+        min-height:2.5em;
+        margin: 15px 0 10px 0;
+    }
+
+    [data-qrcode="entra-qrcode"] input{
+        display: block;
+        padding: 5px 0;
+        min-width: 260px;
+        margin: 5px auto;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid;
+        border-radius: 3px;
+        box-shadow: 1px 1px 10px #828181;
+        background: transparent;
+    }
+    
+    [data-qrcode="entra-qrcode"] input:hover{
+        transition: all .5s;
+        background: #fdfdfd;
+        border: none;
+    }
+
+    [data-qrcode="entra-qrcode"] input:has(:hover)::placeholder{
+        color: #dedede;
+    }
+
+   /*BOTÕES RESPONSÁVEL PELA AÇÃO*/ 
+    .botao-qrcode{
+        display: flex;
+        height: 3.45em;
+    }
+
+    .botao-qrcode button{
+        display: block;
+        margin: 10px;
+        text-align: center;
+        width: 100px;
+        height: 35px;
+        line-height: 12px;
+        font-weight: 600;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 0 3px #2a2a2a;
+    }
+
+    .botao-qrcode button a{
+        text-align: center;
+        line-height: 12px;
+        font-weight: 600;
+        border-radius: 10px;
+        color: #2a2a2a;
+    }
+
+
+    .botao-qrcode button:nth-child(1){
+        background:#56BF80;
+    }
+    .botao-qrcode button:nth-child(2){
+        background:#E2FFFF;
+    }
+    .botao-qrcode button:nth-child(3){
+        background:#00A9C5;
+    }
+
+    
+   
+   
+   
+    
+
+}
