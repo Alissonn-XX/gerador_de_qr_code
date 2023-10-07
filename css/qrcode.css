@@ -41,7 +41,7 @@ form h1{
 */
 
 
-@media (min-width:360px) and (max-width:400px){
+@media (min-width:360px) and (max-width:700px){
     
     body{
         color: var(--colorDark);
