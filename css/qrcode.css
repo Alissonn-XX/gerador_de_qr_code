@@ -49,16 +49,14 @@ form h1{
     }
 
     form{
-        position:absolute;
-        top:0%;
-        left: 50%;
+        position:relative;
+        margin: 5% auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: var(--medidaLaguraSm);
         height:var(--medidaAlturaSm);
-        transform: translate(-50%,-0%);
         border: 2px solid #b2b2b2;
         background: #606566;
         border-radius: 5px;
