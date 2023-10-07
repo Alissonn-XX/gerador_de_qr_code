@@ -1,8 +1,9 @@
 const form = document.querySelector('form')
 const imageQrcode = document.querySelector('[data-qrcode="qrcode-image"]')
 const conteinerBtnAcao = document.querySelector('[data-qrcode="acao-qrcode"]')
-const qrcodeDowload = document.querySelector('[data-qrcode="download-qrcode"]')
+const donwloadQrcodeBtn = document.querySelector('[data-qrcode="download-qrcode"]')
 
+const localHost = 'http://127.0.0.1:5500/#'
 const urlAPI = valueQR => 
    `https://chart.apis.google.com/chart?cht=qr&chl=${valueQR}&chs=300`
 
@@ -14,34 +15,54 @@ const geradoQrCode = async valueQr =>{
         if(!response.ok){
             throw new Error('Não foi possivel gerar o QrCode')
         }
-     
-       console.log(response);
         return response.url
     }catch({error,mensage}){
       console.log(`Erro: ${error} ${mensage}`);
     }
 }
 
-form.addEventListener('submit', async event=>{
-    event.preventDefault()
-    let entradaQr = event.target.entradaQr.value;
+const aplicandoQrcode = async qrTexto =>{
+    if(qrTexto){
+       let QRCODE = await geradoQrCode(qrTexto)
+       imageQrcode.src = QRCODE;
+    }
+    return imageQrcode
+}
 
-        if(entradaQr){
-          let QRCODE = await geradoQrCode(entradaQr)
-          imageQrcode.src = QRCODE;
-        }
- 
-     event.target.reset()
-  })
+
+const downloadQr = async (qrTexto) => {
+  let qrcode = donwloadQrcodeBtn.children[0];
+
+  let imageQrcode = await aplicandoQrcode(qrTexto)
+    if(imageQrcode.src.includes('https')){
+        qrcode.href = imageQrcode.src
+        qrcode.download="seu-qrcode"
+    }
+  return qrcode
+}
+
+
+
+form.addEventListener('submit', event=>{
+  event.preventDefault()
+  let entradaQR = event.target.entradaQr.value
+  downloadQr(entradaQR)
+  event.target.reset()
+})
 
 conteinerBtnAcao.children[1].onclick = ()=>{
    location.reload()
 }
   
-let controle = true
+donwloadQrcodeBtn.addEventListener('click',()=>{
+  let downloadImagenQr = donwloadQrcodeBtn.children[0];
+       if(downloadImagenQr.href === localHost){
+         alert('Não existe nenhum QrCode gerado!')
+         return
+        }
+})
 
 
-const baixandoQrcode = (caminho) =>{
-     
-}
+
+
 
