@@ -8,8 +8,8 @@
 }
 
 :root{
-    --medidaLaguraSm: 21.87rem;
-    --medidaAlturaSm: 31.25rem;
+    --medidaLaguraSm: 21rem;
+    --medidaAlturaSm: 31.5rem;
 
     --colorDark: #fdfdfd;
     --colorLingth: #1c1c1c;
@@ -41,7 +41,7 @@ form h1{
 */
 
 
-@media screen and (max-width:767px){
+@media screen and (max-width:750px){
     
     body{
         color: var(--colorDark);
@@ -81,7 +81,7 @@ form h1{
         gap: 5px;
         align-items: center;
         height: 2.5em;
-        margin: 10px 0 15px 0;
+        margin: 10px 0 15px 5px;
     }
     .ajuda-qrcode img{
         display: block;
@@ -181,15 +181,6 @@ form h1{
         box-shadow: 0 0 3px #2a2a2a;
     }
 
-    .botao-qrcode button a{
-        text-align: center;
-        line-height: 12px;
-        font-weight: 600;
-        border-radius: 10px;
-        color: #2a2a2a;
-    }
-
-
     .botao-qrcode button:nth-child(1){
         background:#56BF80;
     }
@@ -199,7 +190,24 @@ form h1{
     .botao-qrcode button:nth-child(3){
         background:#00A9C5;
     }
-
+    
+    .botao-qrcode button:nth-child(1):hover{
+        background:#64f49e;
+        color:#1a1a1a;
+        box-shadow: 0 0 15px #333232;
+    }
+    
+    .botao-qrcode button:nth-child(2):hover{
+        background:#f6f6f6;
+        color:#1a1a1a;
+        box-shadow: 0 0 15px #333232;
+    }
+    
+    .botao-qrcode button:nth-child(3):hover{
+        background:#17dcff;
+        color:#1a1a1a;
+        box-shadow: 0 0 15px #333232;
+    }
     
    
    
