@@ -45,7 +45,7 @@ form h1{
     
     body{
         color: var(--colorDark);
-        background: var(--corFundoDank)
+        background: var(--corFundoDank);
     }
 
     form{
@@ -132,23 +132,28 @@ form h1{
     .video-ajuda-on span{
         display: inline-block;
         position: relative;
-        top: 66px;
-        left: 50px;
+        top: 30px;
+        left: 80px;
     }
     .video-ajuda-on{
         position: relative;
         width: 300px;
         height: 300px;
         top: 110px;
+        left: -78px;
         opacity: 1;
         z-index: 10;
-        transform: scale(1.5);
         animation: video-animacao .3s ease-out;
     }
     
     .ajuda-qrcode:has(.video-ajuda-on){
         z-index: 10;
         background: rgb(84, 84, 84);
+    }
+
+    .ajuda-qrcode:has(.video-ajuda-on) ~ [data-qrcode="conteiner-qrcode"]
+     ,[data-qrcode="entra-qrcode"]{
+        filter: blur(10px);
     }
 
     @keyframes video-animacao{
@@ -170,6 +175,7 @@ form h1{
         margin: 0 42px;
         border-radius: 5px;
         overflow: hidden;
+        
     }
     
     [data-qrcode="qrcode-image"]{

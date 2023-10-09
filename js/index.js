@@ -77,9 +77,13 @@ donwloadQrcodeBtn.addEventListener("click", () => {
   return controle ? dowload(imagenQrcode.src) : false;
 });
 
+const conteinerQrcode =  document.querySelector('[data-qrcode="conteiner-qrcode"]')
+
 conteinerAjuda.children[0].addEventListener("click", () => {
   const videoAjudaElement = document.querySelector('[data-qrcode="video-qrcode"]')
   videoAjudaElement.classList.toggle('video-ajuda-on')
+   
+  
 });
 
 
