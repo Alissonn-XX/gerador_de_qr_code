@@ -77,6 +77,36 @@ form h1{
         font-weight: 700;
     }
 
+    [data-qrcode="messagem-download-qrcode"]{
+        position: absolute;
+        top: 83px;
+        right: 5px;
+        height: 45px;
+        z-index: 10;
+        padding: 10px;
+        background:#56BF80;
+        border-radius: 10px;
+        color:#1a1a1a;
+        animation: loading-animacao .5s ease;
+    }
+    
+    [data-qrcode="messagem-download-qrcode"] .loading{
+        height: 8px;
+        background: rgb(184, 238, 245);
+        border-radius: 5px;
+        animation: loading-animacao-barra .3s ease;
+    }
+
+    @keyframes loading-animacao-barra{
+        0%{width: 0%;}
+        100%{width: 100%;}
+    }
+
+    @keyframes loading-animacao {
+        0%{opacity: 0}
+        100%{transform: translateX(-8px);}
+    }
+
     .ajuda-qrcode{
         display: flex;
         gap: 5px;
@@ -95,7 +125,7 @@ form h1{
         outline: 2px solid;
         z-index: 100;
     }
-    .video-ajuda-off{
+    .off{
         opacity:0;
     }
 
@@ -117,6 +147,7 @@ form h1{
     }
     
     .ajuda-qrcode:has(.video-ajuda-on){
+        z-index: 10;
         background: rgb(84, 84, 84);
     }
 

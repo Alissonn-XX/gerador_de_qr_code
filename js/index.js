@@ -5,6 +5,8 @@ const donwloadQrcodeBtn = document.querySelector(
   '[data-qrcode="download-qrcode"]'
 );
 const conteinerAjuda = document.querySelector(".ajuda-qrcode");
+const containerLoading = document.querySelector('[data-qrcode="messagem-download-qrcode"]')
+const barraLoading = document.querySelector('[data-qrcode="messagem-download-qrcode"] p')
 
 const urlAPI = (valueQr) =>
   `https://chart.apis.google.com/chart?cht=qr&chl=${valueQr}&chs=300`;
@@ -51,6 +53,8 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
+
+
 donwloadQrcodeBtn.addEventListener("click", () => {
   if (!controle) {
     controle = confirm("Nenhum Qrcode foi gerado. Deseja baixar esse exmplo");
@@ -65,6 +69,12 @@ donwloadQrcodeBtn.addEventListener("click", () => {
       URL.revokeObjectURL(elementDowload.href);
     });
   };
+  barraLoading.classList.add('loading')
+  containerLoading.classList.remove('off')
+  setTimeout(()=>{
+    containerLoading.classList.add('off')
+    barraLoading.classList.remove('loading')
+  },1000)
   return controle ? dowload(imagenQrcode.src) : false;
 });
 
@@ -73,4 +83,6 @@ conteinerAjuda.children[0].addEventListener("click", () => {
   videoAjudaElement.classList.toggle('video-ajuda-on')
 });
 
- 
+
+   
+
