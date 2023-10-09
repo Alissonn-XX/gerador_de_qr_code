@@ -151,8 +151,7 @@ form h1{
         background: rgb(84, 84, 84);
     }
 
-    .ajuda-qrcode:has(.video-ajuda-on) ~ [data-qrcode="conteiner-qrcode"]
-     ,[data-qrcode="entra-qrcode"]{
+    .ajuda-qrcode:has(.video-ajuda-on) ~ [data-qrcode="conteiner-qrcode"]{
         filter: blur(10px);
     }
 
@@ -273,4 +272,21 @@ form h1{
    
     
 
+}
+
+@media screen and (max-width:820px){
+    form{
+        position:relative;
+        margin: 5% auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: var(--medidaLaguraSm);
+        height:var(--medidaAlturaSm);
+        border: 2px solid #b2b2b2;
+        background: #606566;
+        border-radius: 5px;
+        overflow: hidden;
+    }
 }
