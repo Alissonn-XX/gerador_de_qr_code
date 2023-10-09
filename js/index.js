@@ -56,9 +56,6 @@ form.addEventListener("submit", (event) => {
 
 
 donwloadQrcodeBtn.addEventListener("click", () => {
-  if (!controle) {
-    controle = confirm("Nenhum Qrcode foi gerado. Deseja baixar esse exmplo");
-  }
   const dowload = (imagenUrl) => {
     const elementDowload = document.createElement("a");
     fetch(imagenUrl).then(async (retornoURL) => {
@@ -69,8 +66,10 @@ donwloadQrcodeBtn.addEventListener("click", () => {
       URL.revokeObjectURL(elementDowload.href);
     });
   };
-  barraLoading.classList.add('loading')
-  containerLoading.classList.remove('off')
+    if(controle){
+      barraLoading.classList.add('loading')
+      containerLoading.classList.remove('off')
+    }
   setTimeout(()=>{
     containerLoading.classList.add('off')
     barraLoading.classList.remove('loading')

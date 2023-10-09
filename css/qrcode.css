@@ -143,7 +143,7 @@ form h1{
         opacity: 1;
         z-index: 10;
         transform: scale(1.5);
-        animation: video-animacao .4s ease-out;
+        animation: video-animacao .3s ease-out;
     }
     
     .ajuda-qrcode:has(.video-ajuda-on){
