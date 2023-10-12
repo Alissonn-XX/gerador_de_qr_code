@@ -24,7 +24,7 @@
     --corFundoLingth: #fdfdfd;
 }
 
-@media screen and (min-width: 360px){
+@media screen and (min-width:750px) and (min-width: 360px){
     
     body{
         color: var(--colorDark);
